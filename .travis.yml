@@ -10,13 +10,13 @@ script:
   - docker run -e CI=true zl/react-test npm test
 
 after_success:
-  - docker build -t zl/multi-client ./client
-  - docker build -t zl/multi-nginx ./nginx
-  - docker build -t zl/multi-server ./server
-  - docker build -t zl/multi-worker ./worker
+  - docker build -t abbottqwq/multi-client ./client
+  - docker build -t abbottqwq/multi-nginx ./nginx
+  - docker build -t abbottqwq/multi-server ./server
+  - docker build -t abbottqwq/multi-worker ./worker
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push abbottqwq/zl:multi-client
-  - docker push abbottqwq/zl:multi-nginx
-  - docker push abbottqwq/zl:multi-server
-  - docker push abbottqwq/zl:multi-worker
+  - docker push abbottqwq/multi-client
+  - docker push abbottqwq/multi-nginx
+  - docker push abbottqwq/multi-server
+  - docker push abbottqwq/multi-worker
