@@ -16,7 +16,7 @@ after_success:
   - docker build -t zl/multi-worker ./worker
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push zl/multi-client
-  - docker push zl/multi-nginx
-  - docker push zl/multi-server
-  - docker push zl/multi-worker
+  - docker push abbottqwq/zl:multi-client
+  - docker push abbottqwq/zl:multi-nginx
+  - docker push abbottqwq/zl:multi-server
+  - docker push abbottqwq/zl:multi-worker
